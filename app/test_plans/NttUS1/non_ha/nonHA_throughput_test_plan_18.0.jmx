@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.ericsson.jmeter.ecm.controller.EcmTestAppController guiclass="com.ericsson.jmeter.ecm.controller.EcmTestAppControllerGui" testclass="com.ericsson.jmeter.ecm.controller.EcmTestAppController" testname="Ecm Performance Application Controller" enabled="true"/>
+        <hashTree>
+          <com.ericsson.jmeter.ecm.sampler.EcmApplicationSampler guiclass="com.ericsson.jmeter.ecm.sampler.EcmApplicationSamplerGui" testclass="com.ericsson.jmeter.ecm.sampler.EcmApplicationSampler" testname="ECM Performance Application Sampler" enabled="true">
+            <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="tenantNameFormat" elementType="Argument">
+                  <stringProp name="Argument.name">tenantNameFormat</stringProp>
+                  <stringProp name="Argument.value">${tenantNameFormat}</stringProp>
+                  <stringProp name="Argument.desc">Tenant name used for initial login</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="userNameFormat" elementType="Argument">
+                  <stringProp name="Argument.name">userNameFormat</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.desc">Tenant name used for initial login</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="threads" elementType="Argument">
+                  <stringProp name="Argument.name">threads</stringProp>
+                  <stringProp name="Argument.value">1</stringProp>
+                  <stringProp name="Argument.desc">Maximum thread count the test will run in.</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="getOrderListLoopCount" elementType="Argument">
+                  <stringProp name="Argument.name">getOrderListLoopCount</stringProp>
+                  <stringProp name="Argument.value">2</stringProp>
+                  <stringProp name="Argument.desc">Loop count, 0 to skip</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="getVdcListLoopCount" elementType="Argument">
+                  <stringProp name="Argument.name">getVdcListLoopCount</stringProp>
+                  <stringProp name="Argument.value">6</stringProp>
+                  <stringProp name="Argument.desc">Loop count, 0 to skip</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="getVdcDetailsLoopCount" elementType="Argument">
+                  <stringProp name="Argument.name">getVdcDetailsLoopCount</stringProp>
+                  <stringProp name="Argument.value">2</stringProp>
+                  <stringProp name="Argument.desc">Loop count, 0 to skip</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="getVappListLoopCount" elementType="Argument">
+                  <stringProp name="Argument.name">getVappListLoopCount</stringProp>
+                  <stringProp name="Argument.value">6</stringProp>
+                  <stringProp name="Argument.desc">Loop count, 0 to skip</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="getVnListLoopCount" elementType="Argument">
+                  <stringProp name="Argument.name">getVnListLoopCount</stringProp>
+                  <stringProp name="Argument.value">6</stringProp>
+                  <stringProp name="Argument.desc">Loop count, 0 to skip</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="getVmListLoopCount" elementType="Argument">
+                  <stringProp name="Argument.name">getVmListLoopCount</stringProp>
+                  <stringProp name="Argument.value">9</stringProp>
+                  <stringProp name="Argument.desc">Loop count, 0 to skip</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="getVmDetailLoopCount" elementType="Argument">
+                  <stringProp name="Argument.name">getVmDetailLoopCount</stringProp>
+                  <stringProp name="Argument.value">0</stringProp>
+                  <stringProp name="Argument.desc">Loop count, 0 to skip</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="host" elementType="Argument">
+                  <stringProp name="Argument.name">host</stringProp>
+                  <stringProp name="Argument.value">${host}</stringProp>
+                  <stringProp name="Argument.desc">Ecm host name</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="port" elementType="Argument">
+                  <stringProp name="Argument.name">port</stringProp>
+                  <stringProp name="Argument.value">443</stringProp>
+                  <stringProp name="Argument.desc">IP port used for ECM APIs</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="protocol" elementType="Argument">
+                  <stringProp name="Argument.name">protocol</stringProp>
+                  <stringProp name="Argument.value">https</stringProp>
+                  <stringProp name="Argument.desc">Protocol used to connect the server. Valid values are http and https.</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="loginTenant" elementType="Argument">
+                  <stringProp name="Argument.name">loginTenant</stringProp>
+                  <stringProp name="Argument.value">{loginTenant}</stringProp>
+                  <stringProp name="Argument.desc">Tenant name used for initial login</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="userName" elementType="Argument">
+                  <stringProp name="Argument.name">userName</stringProp>
+                  <stringProp name="Argument.value">{userName}</stringProp>
+                  <stringProp name="Argument.desc">Tenant&apos;s user name</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="password" elementType="Argument">
+                  <stringProp name="Argument.name">password</stringProp>
+                  <stringProp name="Argument.value">{password}</stringProp>
+                  <stringProp name="Argument.desc">Tenant&apos;s password</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="classname">com.ericsson.ecm.performance.applications.NTTUS1TestPlanEx</stringProp>
+          </com.ericsson.jmeter.ecm.sampler.EcmApplicationSampler>
+          <hashTree/>
+        </hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="host" elementType="Argument">
+              <stringProp name="Argument.name">host</stringProp>
+              <stringProp name="Argument.value">${__P(host,ecmha-ka26.ete.ka.sw.ericsson.se)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Ecm host name</stringProp>
+            </elementProp>
+            <elementProp name="loginTenant" elementType="Argument">
+              <stringProp name="Argument.name">loginTenant</stringProp>
+              <stringProp name="Argument.value">${__P(loginTenant,ECM)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Tenant name used for initial login</stringProp>
+            </elementProp>
+            <elementProp name="userName" elementType="Argument">
+              <stringProp name="Argument.name">userName</stringProp>
+              <stringProp name="Argument.value">${__P(userName,ecmadmin)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Tenant&apos;s user name</stringProp>
+            </elementProp>
+            <elementProp name="password" elementType="Argument">
+              <stringProp name="Argument.name">password</stringProp>
+              <stringProp name="Argument.value">${__P(password,CloudAdmin123)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Tenant&apos;s password</stringProp>
+            </elementProp>
+            <elementProp name="adminName" elementType="Argument">
+              <stringProp name="Argument.name">adminName</stringProp>
+              <stringProp name="Argument.value">${__P(adminName,admin)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">The user name for vimzone admin.</stringProp>
+            </elementProp>
+            <elementProp name="adminPassword" elementType="Argument">
+              <stringProp name="Argument.name">adminPassword</stringProp>
+              <stringProp name="Argument.value">${__P(adminPassword,foobar)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">The password for vimzone admin.</stringProp>
+            </elementProp>
+            <elementProp name="vimAddress" elementType="Argument">
+              <stringProp name="Argument.name">vimAddress</stringProp>
+              <stringProp name="Argument.value">${__P(vimAddress,1.2.3.4)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">VimZone host (IPs or DNS name)</stringProp>
+            </elementProp>
+            <elementProp name="vimTenant" elementType="Argument">
+              <stringProp name="Argument.name">vimTenant</stringProp>
+              <stringProp name="Argument.value">${__P(vimTenant,ericsson)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">The name of vimzone admin tenant.</stringProp>
+            </elementProp>
+            <elementProp name="vimUser" elementType="Argument">
+              <stringProp name="Argument.name">vimUser</stringProp>
+              <stringProp name="Argument.value">${__P(vimUser,admin)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">The user name for vimzone admin.</stringProp>
+            </elementProp>
+            <elementProp name="vimPassword" elementType="Argument">
+              <stringProp name="Argument.name">vimPassword</stringProp>
+              <stringProp name="Argument.value">${__P(vimPassword,foobar)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">The password for vimzone admin.</stringProp>
+            </elementProp>
+            <elementProp name="vimBaseName" elementType="Argument">
+              <stringProp name="Argument.name">vimBaseName</stringProp>
+              <stringProp name="Argument.value">${__P(vimBaseName,vz)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">the first part of the vimzone name to be created</stringProp>
+            </elementProp>
+            <elementProp name="vimStartIndex" elementType="Argument">
+              <stringProp name="Argument.name">vimStartIndex</stringProp>
+              <stringProp name="Argument.value">${__P(vimStartIndex,0)}</stringProp>
+              <stringProp name="Argument.desc">The starting index of vimzone names to be created</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="vimCount" elementType="Argument">
+              <stringProp name="Argument.name">vimCount</stringProp>
+              <stringProp name="Argument.value">${__P(vimCount,1)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">The  number of vimzones to be created</stringProp>
+            </elementProp>
+            <elementProp name="osVersion" elementType="Argument">
+              <stringProp name="Argument.name">osVersion</stringProp>
+              <stringProp name="Argument.value">${__P(osVersion,ecm181+)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">The version identifier resolved in sampler: newton, newton_20, ecm181+</stringProp>
+            </elementProp>
+            <elementProp name="tenantNameFormat" elementType="Argument">
+              <stringProp name="Argument.name">tenantNameFormat</stringProp>
+              <stringProp name="Argument.value">${__P(tenantNameFormat,perfTenant:4:0:1:9)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

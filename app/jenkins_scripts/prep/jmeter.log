@@ -1,0 +1,136 @@
+2018-07-18 13:37:50,724 INFO o.a.j.u.JMeterUtils [main]: Setting Locale to en_EN
+2018-07-18 13:37:50,742 INFO o.a.j.JMeter [main]: Loading user properties from: /home/app/performance_production/jmeter-40/bin/user.properties
+2018-07-18 13:37:50,743 INFO o.a.j.JMeter [main]: Loading system properties from: /home/app/performance_production/jmeter-40/bin/system.properties
+2018-07-18 13:37:50,749 INFO o.a.j.JMeter [main]: Copyright (c) 1998-2018 The Apache Software Foundation
+2018-07-18 13:37:50,749 INFO o.a.j.JMeter [main]: Version 4.0 r1823414
+2018-07-18 13:37:50,749 INFO o.a.j.JMeter [main]: java.version=1.8.0_161
+2018-07-18 13:37:50,750 INFO o.a.j.JMeter [main]: java.vm.name=OpenJDK 64-Bit Server VM
+2018-07-18 13:37:50,750 INFO o.a.j.JMeter [main]: os.name=Linux
+2018-07-18 13:37:50,750 INFO o.a.j.JMeter [main]: os.arch=amd64
+2018-07-18 13:37:50,750 INFO o.a.j.JMeter [main]: os.version=3.10.0-514.26.2.el7.x86_64
+2018-07-18 13:37:50,750 INFO o.a.j.JMeter [main]: file.encoding=UTF-8
+2018-07-18 13:37:50,750 INFO o.a.j.JMeter [main]: Max memory     =9663676416
+2018-07-18 13:37:50,751 INFO o.a.j.JMeter [main]: Available Processors =48
+2018-07-18 13:37:50,756 INFO o.a.j.JMeter [main]: Default Locale=English (EN)
+2018-07-18 13:37:50,756 INFO o.a.j.JMeter [main]: JMeter  Locale=English (EN)
+2018-07-18 13:37:50,757 INFO o.a.j.JMeter [main]: JMeterHome=/home/app/performance_production/jmeter-40
+2018-07-18 13:37:50,757 INFO o.a.j.JMeter [main]: user.dir  =/home/app/jenkins_scripts/prep
+2018-07-18 13:37:50,757 INFO o.a.j.JMeter [main]: PWD       =/home/app/jenkins_scripts/prep
+2018-07-18 13:37:50,759 INFO o.a.j.JMeter [main]: IP: 10.216.154.206 Name: ecm154x206.ete.ka.sw.ericsson.se FullName: ecm154x206.ete.ka.sw.ericsson.se
+2018-07-18 13:37:51,184 INFO o.a.j.g.a.LookAndFeelCommand [main]: Installing Darcula LAF
+2018-07-18 13:37:51,242 INFO o.a.j.g.a.LookAndFeelCommand [main]: Using look and feel: com.bulenkov.darcula.DarculaLaf [Darcula]
+2018-07-18 13:37:51,243 INFO o.a.j.JMeter [main]: Setting LAF to: com.bulenkov.darcula.DarculaLaf
+2018-07-18 13:37:51,498 INFO o.a.j.JMeter [main]: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2018-07-18 13:37:56,912 INFO o.a.j.e.u.CompoundVariable [main]: Note: Function class names must contain the string: '.functions.'
+2018-07-18 13:37:56,912 INFO o.a.j.e.u.CompoundVariable [main]: Note: Function class names must not contain the string: '.gui.'
+2018-07-18 13:37:59,620 INFO o.a.j.p.h.s.HTTPSamplerBase [AWT-EventQueue-0]: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-07-18 13:37:59,622 INFO o.a.j.p.h.s.HTTPSamplerBase [AWT-EventQueue-0]: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-07-18 13:37:59,623 INFO o.a.j.p.h.s.HTTPSamplerBase [AWT-EventQueue-0]: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-07-18 13:37:59,623 INFO o.a.j.p.h.s.HTTPSamplerBase [AWT-EventQueue-0]: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-07-18 13:37:59,623 INFO o.a.j.p.h.s.HTTPSamplerBase [AWT-EventQueue-0]: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2018-07-18 13:37:59,624 INFO o.a.j.p.h.s.HTTPSamplerBase [AWT-EventQueue-0]: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2018-07-18 13:38:00,247 INFO o.j.r.PluginManager [repo-downloader-thread]: Plugins Status: [jpgc-graphs-basic=2.0, jpgc-cmd=2.1, jpgc-graphs-composite=2.0, jpgc-functions=2.1, jpgc-casutg=2.5, jpgc-graphs-dist=2.0, jpgc-dummy=0.2, jpgc-filterresults=2.1, jpgc-ffw=2.0, jpgc-ggl=2.0, jpgc-fifo=0.2, jpgc-jms=0.2, jpgc-jmxmon=0.2, bzm-parallel=0.7, jpgc-prmctl=0.4, jpgc-perfmon=2.1, jpgc-plugins-manager=0.20, ssh-sampler=1.1.1-SNAPSHOT, jpgc-webdriver=2.3, jpgc-synthesis=2.1, jpgc-tst=2.4, jpgc-csvars=0.1, jmeter-core=4.0, jmeter-ftp=4.0, jmeter-http=4.0, jmeter-jdbc=4.0, jmeter-jms=4.0, jmeter-junit=4.0, jmeter-java=4.0, jmeter-ldap=4.0, jmeter-mail=4.0, jmeter-mongodb=4.0, jmeter-native=4.0, jmeter-tcp=4.0, jmeter-components=4.0, jpgc-standard=2.0]
+2018-07-18 13:38:00,250 INFO o.j.r.PluginManagerMenuItem [repo-downloader-thread]: Plugins Manager has upgrades: [jpgc-plugins-manager, jpgc-tst]
+2018-07-18 13:38:00,677 WARN o.a.j.g.ObjectTableModel [AWT-EventQueue-0]: Header count=13 but classes count=11
+2018-07-18 13:38:00,677 WARN o.a.j.g.ObjectTableModel [AWT-EventQueue-0]: Header count=13 but writeFunctor count=11
+2018-07-18 13:38:01,763 INFO o.a.j.e.KeyToolUtils [AWT-EventQueue-0]: keytool found at 'keytool'
+2018-07-18 13:38:01,764 INFO o.a.j.p.h.p.ProxyControl [AWT-EventQueue-0]: HTTP(S) Test Script Recorder SSL Proxy will use keys that support embedded 3rd party resources in file /home/app/performance_production/jmeter-40/bin/proxyserver.jks
+2018-07-18 13:38:02,755 INFO o.a.j.s.FileServer [AWT-EventQueue-0]: Default base='/home/app/jenkins_scripts/prep'
+2018-07-18 13:38:03,248 INFO o.a.j.s.SampleResult [AWT-EventQueue-0]: Note: Sample TimeStamps are START times
+2018-07-18 13:38:03,248 INFO o.a.j.s.SampleResult [AWT-EventQueue-0]: sampleresult.default.encoding is set to ISO-8859-1
+2018-07-18 13:38:03,248 INFO o.a.j.s.SampleResult [AWT-EventQueue-0]: sampleresult.useNanoTime=true
+2018-07-18 13:38:03,248 INFO o.a.j.s.SampleResult [AWT-EventQueue-0]: sampleresult.nanoThreadSleep=5000
+2018-07-18 13:38:03,551 WARN o.a.j.v.ViewResultsFullVisualizer [AWT-EventQueue-0]: Error loading result renderer: org.apache.jmeter.visualizers.RenderInBrowser
+java.lang.NoClassDefFoundError: javafx/embed/swing/JFXPanel
+	at java.lang.Class.forName0(Native Method) ~[?:1.8.0_161]
+	at java.lang.Class.forName(Class.java:264) ~[?:1.8.0_161]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.createComboRender(ViewResultsFullVisualizer.java:462) ~[ApacheJMeter_components.jar:4.0 r1823414]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.createLeftPanel(ViewResultsFullVisualizer.java:430) ~[ApacheJMeter_components.jar:4.0 r1823414]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.init(ViewResultsFullVisualizer.java:342) ~[ApacheJMeter_components.jar:4.0 r1823414]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.<init>(ViewResultsFullVisualizer.java:147) ~[ApacheJMeter_components.jar:4.0 r1823414]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_161]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_161]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_161]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_161]
+	at java.lang.Class.newInstance(Class.java:442) ~[?:1.8.0_161]
+	at org.apache.jmeter.gui.util.MenuFactory.getGUIComponent(MenuFactory.java:174) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.gui.util.MenuFactory.initializeMenus(MenuFactory.java:141) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.gui.util.MenuFactory.<clinit>(MenuFactory.java:106) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.control.gui.TestPlanGui.createPopupMenu(TestPlanGui.java:92) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.gui.tree.JMeterTreeNode.createPopupMenu(JMeterTreeNode.java:155) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.gui.action.EditCommand.doAction(EditCommand.java:46) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:88) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:70) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311) [?:1.8.0_161]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756) [?:1.8.0_161]
+	at java.awt.EventQueue.access$500(EventQueue.java:97) [?:1.8.0_161]
+	at java.awt.EventQueue$3.run(EventQueue.java:709) [?:1.8.0_161]
+	at java.awt.EventQueue$3.run(EventQueue.java:703) [?:1.8.0_161]
+	at java.security.AccessController.doPrivileged(Native Method) [?:1.8.0_161]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80) [?:1.8.0_161]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726) [?:1.8.0_161]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201) [?:1.8.0_161]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116) [?:1.8.0_161]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105) [?:1.8.0_161]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:1.8.0_161]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93) [?:1.8.0_161]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82) [?:1.8.0_161]
+Caused by: java.lang.ClassNotFoundException: javafx.embed.swing.JFXPanel
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[?:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[?:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[?:1.8.0_161]
+	... 33 more
+2018-07-18 13:38:14,048 INFO o.a.j.g.a.Load [AWT-EventQueue-0]: Loading file: /home/test_plans_4.0/OpenAM/ha/OpenAM_TokenValidation_4.0.jmx
+2018-07-18 13:38:14,049 INFO o.a.j.s.FileServer [AWT-EventQueue-0]: Set new base='/home/test_plans_4.0/OpenAM/ha'
+2018-07-18 13:38:14,329 INFO o.a.j.s.SaveService [AWT-EventQueue-0]: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2018-07-18 13:38:14,343 INFO o.a.j.s.SaveService [AWT-EventQueue-0]: Using SaveService properties file encoding UTF-8
+2018-07-18 13:38:14,346 INFO o.a.j.s.SaveService [AWT-EventQueue-0]: Using SaveService properties version 4.0
+2018-07-18 13:38:14,353 INFO o.a.j.s.SaveService [AWT-EventQueue-0]: Loading file: /home/test_plans_4.0/OpenAM/ha/OpenAM_TokenValidation_4.0.jmx
+2018-07-18 13:38:15,305 WARN o.a.j.v.ViewResultsFullVisualizer [AWT-EventQueue-0]: Error loading result renderer: org.apache.jmeter.visualizers.RenderInBrowser
+java.lang.NoClassDefFoundError: javafx/embed/swing/JFXPanel
+	at java.lang.Class.forName0(Native Method) ~[?:1.8.0_161]
+	at java.lang.Class.forName(Class.java:264) ~[?:1.8.0_161]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.createComboRender(ViewResultsFullVisualizer.java:462) ~[ApacheJMeter_components.jar:4.0 r1823414]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.createLeftPanel(ViewResultsFullVisualizer.java:430) ~[ApacheJMeter_components.jar:4.0 r1823414]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.init(ViewResultsFullVisualizer.java:342) ~[ApacheJMeter_components.jar:4.0 r1823414]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.<init>(ViewResultsFullVisualizer.java:147) ~[ApacheJMeter_components.jar:4.0 r1823414]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_161]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_161]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_161]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_161]
+	at java.lang.Class.newInstance(Class.java:442) ~[?:1.8.0_161]
+	at org.apache.jmeter.gui.GuiPackage.getGuiFromCache(GuiPackage.java:405) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:251) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:222) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addComponent(JMeterTreeModel.java:157) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:133) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:133) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:125) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.gui.GuiPackage.addSubTree(GuiPackage.java:522) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.gui.action.Load.insertLoadedTree(Load.java:193) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:130) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:101) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.gui.action.LoadRecentProject.doActionAfterCheck(LoadRecentProject.java:67) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.gui.action.AbstractActionWithNoRunningTest.doAction(AbstractActionWithNoRunningTest.java:45) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:88) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:70) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311) [?:1.8.0_161]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756) [?:1.8.0_161]
+	at java.awt.EventQueue.access$500(EventQueue.java:97) [?:1.8.0_161]
+	at java.awt.EventQueue$3.run(EventQueue.java:709) [?:1.8.0_161]
+	at java.awt.EventQueue$3.run(EventQueue.java:703) [?:1.8.0_161]
+	at java.security.AccessController.doPrivileged(Native Method) [?:1.8.0_161]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80) [?:1.8.0_161]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726) [?:1.8.0_161]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201) [?:1.8.0_161]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116) [?:1.8.0_161]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105) [?:1.8.0_161]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:1.8.0_161]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93) [?:1.8.0_161]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82) [?:1.8.0_161]
+Caused by: java.lang.ClassNotFoundException: javafx.embed.swing.JFXPanel
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[?:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[?:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[?:1.8.0_161]
+	... 40 more
+2018-07-18 13:38:15,702 INFO o.a.j.s.FileServer [AWT-EventQueue-0]: Set new base='/home/test_plans_4.0/OpenAM/ha'

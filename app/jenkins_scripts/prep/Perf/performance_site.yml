@@ -1,0 +1,7 @@
+create:
+  sites:
+    - &site1
+      id: 1000
+      name: Performance Data Center
+      street: 1 Ericsson Dr
+      provisioningStatus: ACTIVE

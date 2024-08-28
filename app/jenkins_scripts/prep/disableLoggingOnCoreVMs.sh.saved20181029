@@ -1,0 +1,63 @@
+#!/bin/sh
+#source /app/jenkins_scripts/prep/coreVMs.performance
+PASS="ecm123"
+
+. /app/jenkins_scripts/prep/Installation/perf_config_reader.sh
+
+system=$1
+nodes=$(get_CoreVMs $system)
+echo "Nodes: "$nodes
+
+function run0() {
+  cmdline=$1
+  echo "$cmdline"
+  eval $cmdline
+}
+
+for host_name in $nodes
+do
+        #echo "Setting log level to ERROR for host  "$host_name
+        #sshpass -p $PASS ssh -oStrictHostKeyChecking=no root@$host_name uptime
+
+        run0 "sshpass -p $PASS ssh root@$host_name grep \"DEBUG\" /app/ecm/appserver/jboss-eap-6.4/modules/com/ericsson/configuration/main/logback.xml >/tmp/${host_name}_debug_out"
+	run0 "sshpass -p $PASS ssh root@$host_name grep \"TRACE\" /app/ecm/appserver/jboss-eap-6.4/modules/com/ericsson/configuration/main/logback.xml >/tmp/${host_name}_trace_out"
+	echo " check logback.xml before sed:"
+        if [[ -s /tmp/${host_name}_debug_out ]]; then cat /tmp/${host_name}_debug_out; else echo "no DEBUG string found"; fi
+        if [[ -s /tmp/${host_name}_trace_out ]]; then cat /tmp/${host_name}_trace_out; else echo "no TRACE string found"; fi        
+	echo ""
+	run0 "sshpass -p $PASS ssh root@$host_name grep \"DEBUG\" /app/ecm/appserver/jboss-eap-6.4/modules/com/ericsson/cmdb/configuration/main/logback.xml >/tmp/${host_name}_cmdbdebug_out"
+	run0 "sshpass -p $PASS ssh root@$host_name grep \"TRACE\" /app/ecm/appserver/jboss-eap-6.4/modules/com/ericsson/cmdb/configuration/main/logback.xml >/tmp/${host_name}_cmdbtrace_out"
+	echo " check cmdb logback.xml before sed:"
+	if [[ -s /tmp/${host_name}_cmdbdebug_out ]]; then cat /tmp/${host_name}_cmdbdebug_out; else echo "no CMDB DEBUG string found"; fi
+	if [[ -s /tmp/${host_name}_cmdbtrace_out ]]; then cat /tmp/${host_name}_cmdbtrace_out; else echo "no CMDB TRACE string found"; fi
+	echo ""
+	echo "Setting log level to ERROR for Core VMs"
+	run0 "sshpass -p $PASS ssh root@$host_name  sed -i.bak 's%"DEBUG"%"ERROR"%g' /app/ecm/appserver/jboss-eap-6.4/modules/com/ericsson/configuration/main/logback.xml"
+        run0 "sshpass -p $PASS ssh root@$host_name  sed -i.bak 's%"TRACE"%"ERROR"%g' /app/ecm/appserver/jboss-eap-6.4/modules/com/ericsson/configuration/main/logback.xml"
+        run0 "sshpass -p $PASS ssh root@$host_name  sed -i.bak 's%"DEBUG"%"ERROR"%g' /app/ecm/appserver/jboss-eap-6.4/modules/com/ericsson/cmdb/configuration/main/logback.xml"
+        run0 "sshpass -p $PASS ssh root@$host_name  sed -i.bak 's%"TRACE"%"ERROR"%g' /app/ecm/appserver/jboss-eap-6.4/modules/com/ericsson/cmdb/configuration/main/logback.xml"
+
+	echo ""
+	echo " Verify DEBUG and TRACE removed from logback.xml"
+        run0 "sshpass -p $PASS ssh root@$host_name grep \"DEBUG\" /app/ecm/appserver/jboss-eap-6.4/modules/com/ericsson/configuration/main/logback.xml >/tmp/${host_name}_debug_out"
+        echo " check DEBUG on Core"
+        if [[ -s /tmp/${host_name}_debug_out ]]; then cat /tmp/${host_name}_debug_out; else echo "no DEBUG string found"; fi
+			        
+	run0 "sshpass -p $PASS ssh root@$host_name grep \"TRACE\" /app/ecm/appserver/jboss-eap-6.4/modules/com/ericsson/configuration/main/logback.xml >/tmp/${host_name}_trace_out"
+	echo " check TRACE on Core"
+        if [[ -s /tmp/${host_name}_trace_out ]]; then cat /tmp/${host_name}_trace_out; else echo "no TRACE string found"; fi        
+
+        run0 "sshpass -p $PASS ssh root@$host_name grep \"DEBUG\" /app/ecm/appserver/jboss-eap-6.4/modules/com/ericsson/cmdb/configuration/main/logback.xml >/tmp/${host_name}_cmdbdebug_out"
+        echo " check CMDB DEBUG on Core"
+        if [[ -s /tmp/${host_name}_cmdbdebug_out ]]; then cat /tmp/${host_name}_cmdbdebug_out; else echo "no CMDB DEBUG string found"; fi
+										
+	run0 "sshpass -p $PASS ssh root@$host_name grep \"TRACE\" /app/ecm/appserver/jboss-eap-6.4/modules/com/ericsson/cmdb/configuration/main/logback.xml >/tmp/${host_name}_cmdbtrace_out"
+        echo " check CMDB TRACE on Core"
+        if [[ -s /tmp/${host_name}_cmdbtrace_out ]]; then cat /tmp/${host_name}_cmdbtrace_out; else echo "no CMDB TRACE string found"; fi  
+
+	echo " Restarting service jboss-eap for log level change to take effect "
+	run0 "sshpass -p $PASS ssh root@$host_name service jboss-eap restart"
+        echo "Done with node $host_name."
+done
+#echo ""
+#echo " Restart ECM on Cores: ecm_shutdown.sh  ecm_startup.sh "

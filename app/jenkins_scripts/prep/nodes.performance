@@ -1,0 +1,8 @@
+ecm154x208="ecm154x208.ete.ka.sw.ericsson.se"
+perfHA="ecm157x60.ete.ka.sw.ericsson.se ecm157x61.ete.ka.sw.ericsson.se ecm157x62.ete.ka.sw.ericsson.se ecm157x63.ete.ka.sw.ericsson.se ecm157x64.ete.ka.sw.ericsson.se ecm157x65.ete.ka.sw.ericsson.se"
+perfNonHA="ecm156x50.ete.ka.sw.ericsson.se ecm156x51.ete.ka.sw.ericsson.se ecm154x208.ete.ka.sw.ericsson.se"
+perHADb="dl360x4547 dl360x4548"
+perfNonHADb="sl210tx3298"
+headlessHost="ecm154x208.ete.ka.sw.ericsson.se"
+perfABCDHost="ecm156x49.ete.ka.sw.ericsson.se"
+perfNewABCDHost="ecm248x255.ete.ka.sw.ericsson.se"

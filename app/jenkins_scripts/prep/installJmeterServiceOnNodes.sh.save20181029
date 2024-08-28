@@ -1,0 +1,51 @@
+#!/bin/sh
+
+PASS="ecm123"
+
+. /app/jenkins_scripts/prep/Installation/perf_config_reader.sh
+
+system=$1
+nodes=$(get_System_PerfNodes $system)
+
+echo -e "\nEnv all Nodes: "$nodes
+
+for host_name in $nodes
+do
+	echo -e "\nPreparing host "$host_name
+	sshpass -p $PASS ssh -oStrictHostKeyChecking=no -oConnectTimeout=2 root@$host_name uptime
+
+        echo -e "\nCopying files to "$host_name
+	sshpass -p $PASS scp  -oConnectTimeout=2 -r /app/jenkins_scripts/prep/Perf root@$host_name:/root
+	#sshpass -p $PASS ssh  -oConnectTimeout=2 root@$host_name /root/Perf/firewall.sh
+	sshpass -p $PASS ssh  -oConnectTimeout=2 root@$host_name /root/Perf/firewall_port.sh
+	sshpass -p $PASS ssh  -oConnectTimeout=2 root@$host_name /root/Perf/installPerfmonService.sh
+
+	echo -e "\nDone 1/3 step for $host_name\n"
+done
+
+system=$1
+nodes_1=$(get_CoreVMs $system)
+
+echo -e "\nCore Nodes: "$nodes_1
+
+for host_name in $nodes_1
+do
+       echo -e "\nOpening firewall for port 12500 on "$host_name
+       sshpass -p $PASS ssh -oStrictHostKeyChecking=no -oConnectTimeout=2 root@$host_name uptime
+       sshpass -p $PASS ssh  -oConnectTimeout=2 root@$host_name /root/Perf/firewall_port_core.sh
+
+       echo -e "\nDone 2/3 step for Core node $host_name\n"
+done
+
+system=$1
+nodes=$(get_ActVMs $system)
+
+echo -e "\nACT Nodes: "$nodes
+
+for host_name in $nodes
+do
+       echo -e "\nBring firewall down for host  "$host_name
+       sshpass -p $PASS ssh  -oConnectTimeout=2 root@$host_name service iptables stop
+
+       echo -e "\nDone 3/3 step for ACT node $host_name\n"
+done

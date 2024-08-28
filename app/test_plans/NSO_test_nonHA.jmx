@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="resultsFolder" elementType="Argument">
+            <stringProp name="Argument.name">resultsFolder</stringProp>
+            <stringProp name="Argument.value">${__P(resultsFolder,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="host" elementType="Argument">
+            <stringProp name="Argument.name">host</stringProp>
+            <stringProp name="Argument.value">${__P(host,ecmHostName)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="userName" elementType="Argument">
+            <stringProp name="Argument.name">userName</stringProp>
+            <stringProp name="Argument.value">${__P(userName,ecmUserName)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="password" elementType="Argument">
+            <stringProp name="Argument.name">password</stringProp>
+            <stringProp name="Argument.value">${__P(password,PerfMMaster123)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="tenantNameFormat" elementType="Argument">
+            <stringProp name="Argument.name">tenantNameFormat</stringProp>
+            <stringProp name="Argument.value">${__P(tenantNameFormat,nsoTenant:4:0:1:9)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="userNameFormat" elementType="Argument">
+            <stringProp name="Argument.name">userNameFormat</stringProp>
+            <stringProp name="Argument.value">${__P(userNameFormat,perfuser:0:1:1:36)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ecm1" elementType="Argument">
+            <stringProp name="Argument.name">ecm1</stringProp>
+            <stringProp name="Argument.value">${__P(ecm1,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ecm2" elementType="Argument">
+            <stringProp name="Argument.name">ecm2</stringProp>
+            <stringProp name="Argument.value">${__P(ecm2,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pg1" elementType="Argument">
+            <stringProp name="Argument.name">pg1</stringProp>
+            <stringProp name="Argument.value">${__P(pg1,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pg2" elementType="Argument">
+            <stringProp name="Argument.name">pg2</stringProp>
+            <stringProp name="Argument.value">${__P(pg2,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pg3" elementType="Argument">
+            <stringProp name="Argument.name">pg3</stringProp>
+            <stringProp name="Argument.value">${__P(pg3,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="blade1" elementType="Argument">
+            <stringProp name="Argument.name">blade1</stringProp>
+            <stringProp name="Argument.value">${__P(blade1,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="blade2" elementType="Argument">
+            <stringProp name="Argument.name">blade2</stringProp>
+            <stringProp name="Argument.value">${__P(blade2,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="blade3" elementType="Argument">
+            <stringProp name="Argument.name">blade3</stringProp>
+            <stringProp name="Argument.value">${__P(blade3,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="db1" elementType="Argument">
+            <stringProp name="Argument.name">db1</stringProp>
+            <stringProp name="Argument.value">${__P(db1,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="db2" elementType="Argument">
+            <stringProp name="Argument.name">db2</stringProp>
+            <stringProp name="Argument.value">${__P(db2,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="db3" elementType="Argument">
+            <stringProp name="Argument.name">db3</stringProp>
+            <stringProp name="Argument.value">${__P(db3,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="nso1" elementType="Argument">
+            <stringProp name="Argument.name">nso1</stringProp>
+            <stringProp name="Argument.value">${__P(nso1,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="nso2" elementType="Argument">
+            <stringProp name="Argument.name">nso2</stringProp>
+            <stringProp name="Argument.value">${__P(nso2,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ecm_jboss_port" elementType="Argument">
+            <stringProp name="Argument.name">ecm_jboss_port</stringProp>
+            <stringProp name="Argument.value">${__P(ecm_jboss_port,12500)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="users" elementType="Argument">
+            <stringProp name="Argument.name">users</stringProp>
+            <stringProp name="Argument.value">${__P(users,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="loops" elementType="Argument">
+            <stringProp name="Argument.name">loops</stringProp>
+            <stringProp name="Argument.value">${__P(loops,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="rampup" elementType="Argument">
+            <stringProp name="Argument.name">rampup</stringProp>
+            <stringProp name="Argument.value">${__P(rampup,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="vimzone" elementType="Argument">
+            <stringProp name="Argument.name">vimzone</stringProp>
+            <stringProp name="Argument.value">${__P(vimzone,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="imageName" elementType="Argument">
+            <stringProp name="Argument.name">imageName</stringProp>
+            <stringProp name="Argument.value">${__P(imageName,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="imagePath" elementType="Argument">
+            <stringProp name="Argument.name">imagePath</stringProp>
+            <stringProp name="Argument.value">${__P(imagePath,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="flavorName" elementType="Argument">
+            <stringProp name="Argument.name">flavorName</stringProp>
+            <stringProp name="Argument.value">${__P(flavorName,toBeDefined)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.SynthesisReportGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Synthesis Report (filtered)" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">${resultsFolder}/${users}/raw/synthesis.csv</stringProp>
+        <longProp name="interval_grouping">500</longProp>
+        <boolProp name="graph_aggregated">false</boolProp>
+        <stringProp name="include_sample_labels"></stringProp>
+        <stringProp name="exclude_sample_labels"></stringProp>
+        <stringProp name="start_offset"></stringProp>
+        <stringProp name="end_offset"></stringProp>
+        <boolProp name="include_checkbox_state">false</boolProp>
+        <boolProp name="exclude_checkbox_state">false</boolProp>
+      </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+      <hashTree/>
+      <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="CPU jp@gc - PerfMon Metrics Collector" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>false</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>false</message>
+            <threadName>false</threadName>
+            <dataType>false</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <threadCounts>true</threadCounts>
+            <sampleCount>true</sampleCount>
+            <idleTime>true</idleTime>
+          </value>
+        </objProp>
+        <stringProp name="TestPlan.comments">Plugin help available here: http://jmeter-plugins.org/wiki/PerfMon</stringProp>
+        <stringProp name="filename">${resultsFolder}/${users}/raw/cpu.csv</stringProp>
+        <longProp name="interval_grouping">1000</longProp>
+        <boolProp name="graph_aggregated">false</boolProp>
+        <stringProp name="include_sample_labels"></stringProp>
+        <stringProp name="exclude_sample_labels"></stringProp>
+        <stringProp name="start_offset"></stringProp>
+        <stringProp name="end_offset"></stringProp>
+        <boolProp name="include_checkbox_state">false</boolProp>
+        <boolProp name="exclude_checkbox_state">false</boolProp>
+        <collectionProp name="metricConnections">
+          <collectionProp name="-1610885005">
+            <stringProp name="1208111044">${ecm1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="66952">CPU</stringProp>
+            <stringProp name="0"></stringProp>
+          </collectionProp>
+          <collectionProp name="994035266">
+            <stringProp name="1147679738">${pg1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="66952">CPU</stringProp>
+            <stringProp name="0"></stringProp>
+          </collectionProp>
+          <collectionProp name="1959879191">
+            <stringProp name="-1060889651">${blade1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="66952">CPU</stringProp>
+            <stringProp name="0"></stringProp>
+          </collectionProp>
+          <collectionProp name="1385714967">
+            <stringProp name="1147317441">${db1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="66952">CPU</stringProp>
+            <stringProp name="0"></stringProp>
+          </collectionProp>
+          <collectionProp name="-1556670395">
+            <stringProp name="1216901311">${nso1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="66952">CPU</stringProp>
+            <stringProp name="0"></stringProp>
+          </collectionProp>
+        </collectionProp>
+      </kg.apc.jmeter.perfmon.PerfMonCollector>
+      <hashTree/>
+      <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="MEM jp@gc - PerfMon Metrics Collector" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>false</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>false</message>
+            <threadName>false</threadName>
+            <dataType>false</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <threadCounts>true</threadCounts>
+            <sampleCount>true</sampleCount>
+            <idleTime>true</idleTime>
+          </value>
+        </objProp>
+        <stringProp name="TestPlan.comments">Plugin help available here: http://jmeter-plugins.org/wiki/PerfMon</stringProp>
+        <stringProp name="filename">${resultsFolder}/${users}/raw/mem.csv</stringProp>
+        <longProp name="interval_grouping">1000</longProp>
+        <boolProp name="graph_aggregated">false</boolProp>
+        <stringProp name="include_sample_labels"></stringProp>
+        <stringProp name="exclude_sample_labels"></stringProp>
+        <stringProp name="start_offset"></stringProp>
+        <stringProp name="end_offset"></stringProp>
+        <boolProp name="include_checkbox_state">false</boolProp>
+        <boolProp name="exclude_checkbox_state">false</boolProp>
+        <collectionProp name="metricConnections">
+          <collectionProp name="383367970">
+            <stringProp name="1208111044">${ecm1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="-1993889503">Memory</stringProp>
+            <stringProp name="0"></stringProp>
+          </collectionProp>
+          <collectionProp name="-1306679055">
+            <stringProp name="1147679738">${pg1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="-1993889503">Memory</stringProp>
+            <stringProp name="0"></stringProp>
+          </collectionProp>
+          <collectionProp name="-340835130">
+            <stringProp name="-1060889651">${blade1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="-1993889503">Memory</stringProp>
+            <stringProp name="0"></stringProp>
+          </collectionProp>
+          <collectionProp name="-914999354">
+            <stringProp name="1147317441">${db1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="-1993889503">Memory</stringProp>
+            <stringProp name="0"></stringProp>
+          </collectionProp>
+          <collectionProp name="437582580">
+            <stringProp name="1216901311">${nso1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="-1993889503">Memory</stringProp>
+            <stringProp name="0"></stringProp>
+          </collectionProp>
+        </collectionProp>
+      </kg.apc.jmeter.perfmon.PerfMonCollector>
+      <hashTree/>
+      <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="NETW-RX jp@gc - PerfMon Metrics Collector" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>false</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>false</message>
+            <threadName>false</threadName>
+            <dataType>false</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <threadCounts>true</threadCounts>
+            <sampleCount>true</sampleCount>
+            <idleTime>true</idleTime>
+          </value>
+        </objProp>
+        <stringProp name="TestPlan.comments">Plugin help available here: http://jmeter-plugins.org/wiki/PerfMon</stringProp>
+        <stringProp name="filename">${resultsFolder}/${users}/raw/netwrx.csv</stringProp>
+        <longProp name="interval_grouping">1000</longProp>
+        <boolProp name="graph_aggregated">false</boolProp>
+        <stringProp name="include_sample_labels"></stringProp>
+        <stringProp name="exclude_sample_labels"></stringProp>
+        <stringProp name="start_offset"></stringProp>
+        <stringProp name="end_offset"></stringProp>
+        <boolProp name="include_checkbox_state">false</boolProp>
+        <boolProp name="exclude_checkbox_state">false</boolProp>
+        <collectionProp name="metricConnections">
+          <collectionProp name="553908274">
+            <stringProp name="1208111044">${ecm1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="-274342153">Network I/O</stringProp>
+            <stringProp name="3654">rx</stringProp>
+          </collectionProp>
+          <collectionProp name="-1136138751">
+            <stringProp name="1147679738">${pg1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="-274342153">Network I/O</stringProp>
+            <stringProp name="3654">rx</stringProp>
+          </collectionProp>
+          <collectionProp name="-170294826">
+            <stringProp name="-1060889651">${blade1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="-274342153">Network I/O</stringProp>
+            <stringProp name="3654">rx</stringProp>
+          </collectionProp>
+          <collectionProp name="-744459050">
+            <stringProp name="1147317441">${db1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="-274342153">Network I/O</stringProp>
+            <stringProp name="3654">rx</stringProp>
+          </collectionProp>
+          <collectionProp name="608122884">
+            <stringProp name="1216901311">${nso1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="-274342153">Network I/O</stringProp>
+            <stringProp name="3654">rx</stringProp>
+          </collectionProp>
+        </collectionProp>
+      </kg.apc.jmeter.perfmon.PerfMonCollector>
+      <hashTree/>
+      <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="NETW-TX jp@gc - PerfMon Metrics Collector" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>false</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>false</message>
+            <threadName>false</threadName>
+            <dataType>false</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <threadCounts>true</threadCounts>
+            <sampleCount>true</sampleCount>
+            <idleTime>true</idleTime>
+          </value>
+        </objProp>
+        <stringProp name="TestPlan.comments">Plugin help available here: http://jmeter-plugins.org/wiki/PerfMon</stringProp>
+        <stringProp name="filename">${resultsFolder}/${users}/raw/nettx.csv</stringProp>
+        <longProp name="interval_grouping">1000</longProp>
+        <boolProp name="graph_aggregated">false</boolProp>
+        <stringProp name="include_sample_labels"></stringProp>
+        <stringProp name="exclude_sample_labels"></stringProp>
+        <stringProp name="start_offset"></stringProp>
+        <stringProp name="end_offset"></stringProp>
+        <boolProp name="include_checkbox_state">false</boolProp>
+        <boolProp name="exclude_checkbox_state">false</boolProp>
+        <collectionProp name="metricConnections">
+          <collectionProp name="553939379">
+            <stringProp name="1208111044">${ecm1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="-274342153">Network I/O</stringProp>
+            <stringProp name="3716">tx</stringProp>
+          </collectionProp>
+          <collectionProp name="-1136107646">
+            <stringProp name="1147679738">${pg1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="-274342153">Network I/O</stringProp>
+            <stringProp name="3716">tx</stringProp>
+          </collectionProp>
+          <collectionProp name="-170263721">
+            <stringProp name="-1060889651">${blade1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="-274342153">Network I/O</stringProp>
+            <stringProp name="3716">tx</stringProp>
+          </collectionProp>
+          <collectionProp name="-744427945">
+            <stringProp name="1147317441">${db1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="-274342153">Network I/O</stringProp>
+            <stringProp name="3716">tx</stringProp>
+          </collectionProp>
+          <collectionProp name="608153989">
+            <stringProp name="1216901311">${nso1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="-274342153">Network I/O</stringProp>
+            <stringProp name="3716">tx</stringProp>
+          </collectionProp>
+        </collectionProp>
+      </kg.apc.jmeter.perfmon.PerfMonCollector>
+      <hashTree/>
+      <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="DISK-RD jp@gc - PerfMon Metrics Collector" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>false</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>false</message>
+            <threadName>false</threadName>
+            <dataType>false</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <threadCounts>true</threadCounts>
+            <sampleCount>true</sampleCount>
+            <idleTime>true</idleTime>
+          </value>
+        </objProp>
+        <stringProp name="TestPlan.comments">Plugin help available here: http://jmeter-plugins.org/wiki/PerfMon</stringProp>
+        <stringProp name="filename">${resultsFolder}/${users}/raw/read.csv</stringProp>
+        <longProp name="interval_grouping">1000</longProp>
+        <boolProp name="graph_aggregated">false</boolProp>
+        <stringProp name="include_sample_labels"></stringProp>
+        <stringProp name="exclude_sample_labels"></stringProp>
+        <stringProp name="start_offset"></stringProp>
+        <stringProp name="end_offset"></stringProp>
+        <boolProp name="include_checkbox_state">false</boolProp>
+        <boolProp name="exclude_checkbox_state">false</boolProp>
+        <collectionProp name="metricConnections">
+          <collectionProp name="-507402815">
+            <stringProp name="1208111044">${ecm1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="2112896831">Disks I/O</stringProp>
+            <stringProp name="-1110510443">readbytes</stringProp>
+          </collectionProp>
+          <collectionProp name="2097517456">
+            <stringProp name="1147679738">${pg1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="2112896831">Disks I/O</stringProp>
+            <stringProp name="-1110510443">readbytes</stringProp>
+          </collectionProp>
+          <collectionProp name="-1231605915">
+            <stringProp name="-1060889651">${blade1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="2112896831">Disks I/O</stringProp>
+            <stringProp name="-1110510443">readbytes</stringProp>
+          </collectionProp>
+          <collectionProp name="-1805770139">
+            <stringProp name="1147317441">${db1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="2112896831">Disks I/O</stringProp>
+            <stringProp name="-1110510443">readbytes</stringProp>
+          </collectionProp>
+          <collectionProp name="-453188205">
+            <stringProp name="1216901311">${nso1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="2112896831">Disks I/O</stringProp>
+            <stringProp name="-1110510443">readbytes</stringProp>
+          </collectionProp>
+        </collectionProp>
+      </kg.apc.jmeter.perfmon.PerfMonCollector>
+      <hashTree/>
+      <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="DISK-WR jp@gc - PerfMon Metrics Collector" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>false</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>false</message>
+            <threadName>false</threadName>
+            <dataType>false</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <threadCounts>true</threadCounts>
+            <sampleCount>true</sampleCount>
+            <idleTime>true</idleTime>
+          </value>
+        </objProp>
+        <stringProp name="TestPlan.comments">Plugin help available here: http://jmeter-plugins.org/wiki/PerfMon</stringProp>
+        <stringProp name="filename">${resultsFolder}/${users}/raw/write.csv</stringProp>
+        <longProp name="interval_grouping">1000</longProp>
+        <boolProp name="graph_aggregated">false</boolProp>
+        <stringProp name="include_sample_labels"></stringProp>
+        <stringProp name="exclude_sample_labels"></stringProp>
+        <stringProp name="start_offset"></stringProp>
+        <stringProp name="end_offset"></stringProp>
+        <boolProp name="include_checkbox_state">false</boolProp>
+        <boolProp name="exclude_checkbox_state">false</boolProp>
+        <collectionProp name="metricConnections">
+          <collectionProp name="-1932574858">
+            <stringProp name="1208111044">${ecm1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="2112896831">Disks I/O</stringProp>
+            <stringProp name="-633177108">writebytes</stringProp>
+          </collectionProp>
+          <collectionProp name="672345413">
+            <stringProp name="1147679738">${pg1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="2112896831">Disks I/O</stringProp>
+            <stringProp name="-633177108">writebytes</stringProp>
+          </collectionProp>
+          <collectionProp name="1638189338">
+            <stringProp name="-1060889651">${blade1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="2112896831">Disks I/O</stringProp>
+            <stringProp name="-633177108">writebytes</stringProp>
+          </collectionProp>
+          <collectionProp name="1064025114">
+            <stringProp name="1147317441">${db1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="2112896831">Disks I/O</stringProp>
+            <stringProp name="-633177108">writebytes</stringProp>
+          </collectionProp>
+          <collectionProp name="-1878360248">
+            <stringProp name="1216901311">${nso1}</stringProp>
+            <stringProp name="1600768">4444</stringProp>
+            <stringProp name="2112896831">Disks I/O</stringProp>
+            <stringProp name="-633177108">writebytes</stringProp>
+          </collectionProp>
+        </collectionProp>
+      </kg.apc.jmeter.perfmon.PerfMonCollector>
+      <hashTree/>
+      <kg.apc.jmeter.jmxmon.JMXMonCollector guiclass="kg.apc.jmeter.vizualizers.JMXMonGui" testclass="kg.apc.jmeter.jmxmon.JMXMonCollector" testname="ECM CORE jp@gc - JMXMon Samples Collector" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>false</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>false</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>true</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>true</responseData>
+            <samplerData>true</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>true</responseHeaders>
+            <requestHeaders>true</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <fileName>true</fileName>
+            <hostname>true</hostname>
+            <threadCounts>true</threadCounts>
+            <sampleCount>true</sampleCount>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="TestPlan.comments">Plugin help available here: http://jmeter-plugins.org/wiki/JMXMon</stringProp>
+        <stringProp name="filename">${resultsFolder}/${users}/raw/ecmjmx.csv</stringProp>
+        <longProp name="interval_grouping">1000</longProp>
+        <boolProp name="graph_aggregated">false</boolProp>
+        <stringProp name="include_sample_labels"></stringProp>
+        <stringProp name="exclude_sample_labels"></stringProp>
+        <stringProp name="start_offset"></stringProp>
+        <stringProp name="end_offset"></stringProp>
+        <boolProp name="include_checkbox_state">false</boolProp>
+        <boolProp name="exclude_checkbox_state">false</boolProp>
+        <collectionProp name="samplers">
+          <collectionProp name="-596747625">
+            <stringProp name="563092484">${ecm1} jboss threads</stringProp>
+            <stringProp name="904974450">service:jmx:remoting-jmx://${ecm1}:${ecm_jboss_port}</stringProp>
+            <stringProp name="92668751">admin</stringProp>
+            <stringProp name="-904532845">Admin!23</stringProp>
+            <stringProp name="1641949653">java.lang:type=Threading</stringProp>
+            <stringProp name="-722063099">ThreadCount</stringProp>
+            <stringProp name="0"></stringProp>
+            <stringProp name="1237">false</stringProp>
+            <stringProp name="1237">false</stringProp>
+          </collectionProp>
+          <collectionProp name="120962311">
+            <stringProp name="-2117641786">${ecm1} jboss heap alloc</stringProp>
+            <stringProp name="904974450">service:jmx:remoting-jmx://${ecm1}:${ecm_jboss_port}</stringProp>
+            <stringProp name="92668751">admin</stringProp>
+            <stringProp name="-904532845">Admin!23</stringProp>
+            <stringProp name="-1508861468">java.lang:type=Memory</stringProp>
+            <stringProp name="-687755404">HeapMemoryUsage</stringProp>
+            <stringProp name="3599293">used</stringProp>
+            <stringProp name="1237">false</stringProp>
+            <stringProp name="1237">false</stringProp>
+          </collectionProp>
+          <collectionProp name="-14887171">
+            <stringProp name="362704946">${ecm1} jboss class loaded</stringProp>
+            <stringProp reference="../../collectionProp[2]/stringProp[2]"/>
+            <stringProp reference="../../collectionProp[2]/stringProp[3]"/>
+            <stringProp reference="../../collectionProp[2]/stringProp[4]"/>
+            <stringProp name="298852167">java.lang:type=ClassLoading</stringProp>
+            <stringProp name="1141682300">LoadedClassCount</stringProp>
+            <stringProp name="0"></stringProp>
+            <stringProp name="1237">false</stringProp>
+            <stringProp name="1237">false</stringProp>
+          </collectionProp>
+          <collectionProp name="-950544656">
+            <stringProp name="-1390014261">${ecm1} jboss class unloaded</stringProp>
+            <stringProp reference="../../collectionProp[2]/stringProp[2]"/>
+            <stringProp reference="../../collectionProp[2]/stringProp[3]"/>
+            <stringProp reference="../../collectionProp[2]/stringProp[4]"/>
+            <stringProp name="298852167">java.lang:type=ClassLoading</stringProp>
+            <stringProp name="1672865045">UnloadedClassCount</stringProp>
+            <stringProp name="0"></stringProp>
+            <stringProp name="1237">false</stringProp>
+            <stringProp name="1237">false</stringProp>
+          </collectionProp>
+          <collectionProp name="-55631413">
+            <stringProp name="897712080">${ecm1} jboss gc count</stringProp>
+            <stringProp reference="../../collectionProp[2]/stringProp[2]"/>
+            <stringProp reference="../../collectionProp[2]/stringProp[3]"/>
+            <stringProp reference="../../collectionProp[2]/stringProp[4]"/>
+            <stringProp name="1647148085">java.lang:type=GarbageCollector,name=G1 Young Generation</stringProp>
+            <stringProp name="37477617">CollectionCount</stringProp>
+            <stringProp name="0"></stringProp>
+            <stringProp name="1231">true</stringProp>
+            <stringProp name="1237">false</stringProp>
+          </collectionProp>
+          <collectionProp name="1597588336">
+            <stringProp name="1692026860">${ecm1} jboss gc time</stringProp>
+            <stringProp reference="../../collectionProp[2]/stringProp[2]"/>
+            <stringProp reference="../../collectionProp[2]/stringProp[3]"/>
+            <stringProp reference="../../collectionProp[2]/stringProp[4]"/>
+            <stringProp name="1647148085">java.lang:type=GarbageCollector,name=G1 Young Generation</stringProp>
+            <stringProp name="-691027285">CollectionTime</stringProp>
+            <stringProp name="0"></stringProp>
+            <stringProp name="1231">true</stringProp>
+            <stringProp name="1237">false</stringProp>
+          </collectionProp>
+        </collectionProp>
+      </kg.apc.jmeter.jmxmon.JMXMonCollector>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">${loops}</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${users}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${rampup}</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.ericsson.jmeter.ecm.controller.EcmTestAppController guiclass="com.ericsson.jmeter.ecm.controller.EcmTestAppControllerGui" testclass="com.ericsson.jmeter.ecm.controller.EcmTestAppController" testname="Ecm Performance Application Controller" enabled="true"/>
+        <hashTree>
+          <com.ericsson.jmeter.ecm.sampler.EcmApplicationSampler guiclass="com.ericsson.jmeter.ecm.sampler.EcmApplicationSamplerGui" testclass="com.ericsson.jmeter.ecm.sampler.EcmApplicationSampler" testname="ECM Performance Application Sampler" enabled="true">
+            <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="host" elementType="Argument">
+                  <stringProp name="Argument.name">host</stringProp>
+                  <stringProp name="Argument.value">${host}</stringProp>
+                  <stringProp name="Argument.desc">Ecm host name</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="port" elementType="Argument">
+                  <stringProp name="Argument.name">port</stringProp>
+                  <stringProp name="Argument.value">443</stringProp>
+                  <stringProp name="Argument.desc">IP port used for ECM APIs</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="protocol" elementType="Argument">
+                  <stringProp name="Argument.name">protocol</stringProp>
+                  <stringProp name="Argument.value">https</stringProp>
+                  <stringProp name="Argument.desc">Protocol used to connect the server. Valid values are http and https.</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="adminTenant" elementType="Argument">
+                  <stringProp name="Argument.name">adminTenant</stringProp>
+                  <stringProp name="Argument.value">ECM</stringProp>
+                  <stringProp name="Argument.desc">Admin tenant name</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="adminUser" elementType="Argument">
+                  <stringProp name="Argument.name">adminUser</stringProp>
+                  <stringProp name="Argument.value">ecmadmin</stringProp>
+                  <stringProp name="Argument.desc">Admin user name</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="adminPassword" elementType="Argument">
+                  <stringProp name="Argument.name">adminPassword</stringProp>
+                  <stringProp name="Argument.value">CloudAdmin123</stringProp>
+                  <stringProp name="Argument.desc">Admin user&apos;s password</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="tenantNameFormat" elementType="Argument">
+                  <stringProp name="Argument.name">tenantNameFormat</stringProp>
+                  <stringProp name="Argument.value">${tenantNameFormat}</stringProp>
+                  <stringProp name="Argument.desc">Tenant name used for test execution</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="userNameFormat" elementType="Argument">
+                  <stringProp name="Argument.name">userNameFormat</stringProp>
+                  <stringProp name="Argument.value">${userNameFormat}</stringProp>
+                  <stringProp name="Argument.desc">User name used for for test execution</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="userPassword" elementType="Argument">
+                  <stringProp name="Argument.name">userPassword</stringProp>
+                  <stringProp name="Argument.value">${password}</stringProp>
+                  <stringProp name="Argument.desc">Password for the user used for for test execution</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="threads" elementType="Argument">
+                  <stringProp name="Argument.name">threads</stringProp>
+                  <stringProp name="Argument.value">${users}</stringProp>
+                  <stringProp name="Argument.desc">Maximum thread count the test will run in.</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="vimzone" elementType="Argument">
+                  <stringProp name="Argument.name">vimzone</stringProp>
+                  <stringProp name="Argument.value">${vimzone}</stringProp>
+                  <stringProp name="Argument.desc">Name of the vimzone.</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="imageName" elementType="Argument">
+                  <stringProp name="Argument.name">imageName</stringProp>
+                  <stringProp name="Argument.value">${imageName}</stringProp>
+                  <stringProp name="Argument.desc">Name of the image used for VMs.</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="imagePath" elementType="Argument">
+                  <stringProp name="Argument.name">imagePath</stringProp>
+                  <stringProp name="Argument.value">${imagePath}</stringProp>
+                  <stringProp name="Argument.desc">Image path on local drive.</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="flavorName" elementType="Argument">
+                  <stringProp name="Argument.name">flavorName</stringProp>
+                  <stringProp name="Argument.value">${flavorName}</stringProp>
+                  <stringProp name="Argument.desc">Name of the flavor used for VMs.</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="hotName" elementType="Argument">
+                  <stringProp name="Argument.name">hotName</stringProp>
+                  <stringProp name="Argument.value">nso_hot</stringProp>
+                  <stringProp name="Argument.desc">Name of the HOT package used by NS.</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="classname">com.ericsson.ecm.performance.applications.nso.InstantiateNs</stringProp>
+          </com.ericsson.jmeter.ecm.sampler.EcmApplicationSampler>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

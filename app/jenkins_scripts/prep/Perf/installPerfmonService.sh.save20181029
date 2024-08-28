@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# for debug use set -x
+#set -x
+SCRIPTS_DIR="$(dirname $0)/scripts"
+CRONTAB="/var/spool/cron/root"
+
+grep -q "* sh $SCRIPTS_DIR/perf_sampler.sh" $CRONTAB
+if [ $? -ne 0 ]
+then
+     echo "#Performance: Collect socket and thread statistics" >> $CRONTAB
+     echo "0-59/10 * * * * sh $SCRIPTS_DIR/perf_sampler.sh > /dev/null 2>&1" >> $CRONTAB
+fi
+
+echo -e "\nChecking perfmon service already running...\n"
+systemctl status perfmon | grep -v grep | grep running >> /dev/null
+
+if [ $? -ne 0 ]
+then
+	echo -e "\nInstalling perfmon service...\n"
+
+	SERVICEFILE="/usr/lib/systemd/system/perfmon.service"
+
+	echo -e "[Unit]\nDescription=PerfMon Jmeter Agent\nAfter=network.target\n" > $SERVICEFILE
+	echo -e "[Service]\nType=simple\nExecStart=/usr/bin/java -jar /root/Perf/jmeter/CMDRunner.jar --tool PerfMonAgent\n" >> $SERVICEFILE
+	echo -e "[Install]\nWantedBy=multi-user.target" >> $SERVICEFILE
+
+	ls -l $SERVICEFILE
+
+	echo -e "\nReloading services...\n"
+	systemctl daemon-reload
+	sleep 5
+	systemctl status perfmon
+
+	echo -e "\nEnabling service to start at boot...\n"
+	systemctl enable perfmon
+
+	echo -e "\nStarting perfmon service...\n"
+	systemctl start perfmon
+	sleep 5
+	systemctl status perfmon
+
+	echo -e "\nperfmon service install finished\n"
+
+else
+        echo -e "\nperfmon Service is already running!\n"
+        exit
+fi

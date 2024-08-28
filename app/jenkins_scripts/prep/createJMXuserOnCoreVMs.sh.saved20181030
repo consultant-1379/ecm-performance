@@ -1,0 +1,19 @@
+#!/bin/sh
+#source /app/jenkins_scripts/prep/coreVMs.performance
+PASS="ecm123"
+
+. /app/jenkins_scripts/prep/Installation/perf_config_reader.sh
+
+system=$1
+nodes=$(get_CoreVMs $system)
+echo "Nodes: "$nodes
+
+for host_name in $nodes
+do
+	echo "Preparing host "$host_name
+	sshpass -p $PASS ssh -oStrictHostKeyChecking=no root@$host_name uptime
+	echo " Checking ECM version on Core "
+	sshpass -p $PASS ssh -oStrictHostKeyChecking=no root@$host_name ecmversion | grep ecm-gui | awk '{print $2}' | cut -c1-11
+	sshpass -p $PASS ssh root@$host_name /app/ecm/appserver/jboss-eap-6.4/bin/add-user.sh -u 'admin' -p 'Admin!23' 
+	echo "Done."
+done

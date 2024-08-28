@@ -1,0 +1,13 @@
+#!/bin/sh
+
+echo " script to clean-up headless GUI setup on Jmeter host  "
+date
+echo " kill any existent Xvfb process "
+kill -9 $(ps -efa | grep Xvfb | grep -v grep | awk '{print $2}')
+sleep 5
+echo " verify no Xvf process exists "
+ps -efa | grep Xvfb | grep -v grep | wc
+echo " remove any /tmp/.Xi-lock file , with i from 1 to 98"
+for i in {1..98}; do rm -f /tmp/.X$i*-lock; done
+sleep 5
+date

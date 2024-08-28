@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${threadCount}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.ericsson.jmeter.ecm.controller.EcmTestAppController guiclass="com.ericsson.jmeter.ecm.controller.EcmTestAppControllerGui" testclass="com.ericsson.jmeter.ecm.controller.EcmTestAppController" testname="Ecm Performance Application Controller" enabled="true"/>
+        <hashTree>
+          <com.ericsson.jmeter.ecm.sampler.EcmApplicationSampler guiclass="com.ericsson.jmeter.ecm.sampler.EcmApplicationSamplerGui" testclass="com.ericsson.jmeter.ecm.sampler.EcmApplicationSampler" testname="ECM Performance Application Sampler" enabled="true">
+            <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="host" elementType="Argument">
+                  <stringProp name="Argument.name">host</stringProp>
+                  <stringProp name="Argument.value">${host}</stringProp>
+                  <stringProp name="Argument.desc">Ecm host name</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="port" elementType="Argument">
+                  <stringProp name="Argument.name">port</stringProp>
+                  <stringProp name="Argument.value">443</stringProp>
+                  <stringProp name="Argument.desc">IP port used for ECM APIs</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="protocol" elementType="Argument">
+                  <stringProp name="Argument.name">protocol</stringProp>
+                  <stringProp name="Argument.value">https</stringProp>
+                  <stringProp name="Argument.desc">Protocol used to connect the server. Valid values are http and https.</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="loginTenant" elementType="Argument">
+                  <stringProp name="Argument.name">loginTenant</stringProp>
+                  <stringProp name="Argument.value">ECM</stringProp>
+                  <stringProp name="Argument.desc">Tenant name used for initial login</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="userName" elementType="Argument">
+                  <stringProp name="Argument.name">userName</stringProp>
+                  <stringProp name="Argument.value">${userName}</stringProp>
+                  <stringProp name="Argument.desc">Tenant&apos;s user name</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="password" elementType="Argument">
+                  <stringProp name="Argument.name">password</stringProp>
+                  <stringProp name="Argument.value">${password}</stringProp>
+                  <stringProp name="Argument.desc">Tenant&apos;s password</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="ecmFolderPath" elementType="Argument">
+                  <stringProp name="Argument.name">ecmFolderPath</stringProp>
+                  <stringProp name="Argument.value">${ecmFolderPath}</stringProp>
+                  <stringProp name="Argument.desc">A folder where all the JSON files are located.</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="filterToVimzone" elementType="Argument">
+                  <stringProp name="Argument.name">filterToVimzone</stringProp>
+                  <stringProp name="Argument.value">${filterToVimzone}</stringProp>
+                  <stringProp name="Argument.desc">Only upload data that belong to this vimzone</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="multithread" elementType="Argument">
+                  <stringProp name="Argument.name">multithread</stringProp>
+                  <stringProp name="Argument.value">${multithread}</stringProp>
+                  <stringProp name="Argument.desc">If true, it will execute one tenant per thread. Sufficient number of threads should be given to cover all tenants. </stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="classname">com.ericsson.ecm.performance.applications.loading.UploadAllCmdbObjects</stringProp>
+          </com.ericsson.jmeter.ecm.sampler.EcmApplicationSampler>
+          <hashTree/>
+        </hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="host" elementType="Argument">
+              <stringProp name="Argument.name">host</stringProp>
+              <stringProp name="Argument.value">${__P(host,ecmHostName)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="userName" elementType="Argument">
+              <stringProp name="Argument.name">userName</stringProp>
+              <stringProp name="Argument.value">${__P(userName,ecmUserName)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="password" elementType="Argument">
+              <stringProp name="Argument.name">password</stringProp>
+              <stringProp name="Argument.value">${__P(password,ecmPassword)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="ecmFolderPath" elementType="Argument">
+              <stringProp name="Argument.name">ecmFolderPath</stringProp>
+              <stringProp name="Argument.value">${__P(ecmFolderPath,ecmFolderPathString)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="filterToVimzone" elementType="Argument">
+              <stringProp name="Argument.name">filterToVimzone</stringProp>
+              <stringProp name="Argument.value">${__P(filterToVimzone,filterToVimzoneString)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="multithread" elementType="Argument">
+              <stringProp name="Argument.name">multithread</stringProp>
+              <stringProp name="Argument.value">${__P(multithread,true)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="threadCount" elementType="Argument">
+              <stringProp name="Argument.name">threadCount</stringProp>
+              <stringProp name="Argument.value">${__P(threadCount,1)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.SynthesisReportGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Synthesis Report (filtered)" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">500</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

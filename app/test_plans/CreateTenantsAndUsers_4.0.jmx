@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.ericsson.jmeter.ecm.controller.EcmTestAppController guiclass="com.ericsson.jmeter.ecm.controller.EcmTestAppControllerGui" testclass="com.ericsson.jmeter.ecm.controller.EcmTestAppController" testname="Ecm Performance Application Controller" enabled="true"/>
+        <hashTree>
+          <com.ericsson.jmeter.ecm.sampler.EcmApplicationSampler guiclass="com.ericsson.jmeter.ecm.sampler.EcmApplicationSamplerGui" testclass="com.ericsson.jmeter.ecm.sampler.EcmApplicationSampler" testname="ECM Performance Application Sampler" enabled="true">
+            <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="host" elementType="Argument">
+                  <stringProp name="Argument.name">host</stringProp>
+                  <stringProp name="Argument.value">${host}</stringProp>
+                  <stringProp name="Argument.desc">Ecm host name</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="port" elementType="Argument">
+                  <stringProp name="Argument.name">port</stringProp>
+                  <stringProp name="Argument.value">443</stringProp>
+                  <stringProp name="Argument.desc">IP port used for ECM APIs</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="protocol" elementType="Argument">
+                  <stringProp name="Argument.name">protocol</stringProp>
+                  <stringProp name="Argument.value">https</stringProp>
+                  <stringProp name="Argument.desc">Protocol used to connect the server. Valid values are http and https.</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="loginTenant" elementType="Argument">
+                  <stringProp name="Argument.name">loginTenant</stringProp>
+                  <stringProp name="Argument.value">${loginTenant}</stringProp>
+                  <stringProp name="Argument.desc">Tenant name used for initial login</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="userName" elementType="Argument">
+                  <stringProp name="Argument.name">userName</stringProp>
+                  <stringProp name="Argument.value">${userName}</stringProp>
+                  <stringProp name="Argument.desc">Tenant&apos;s user name</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="password" elementType="Argument">
+                  <stringProp name="Argument.name">password</stringProp>
+                  <stringProp name="Argument.value">${password}</stringProp>
+                  <stringProp name="Argument.desc">Tenant&apos;s password</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="tenantNamePreffix" elementType="Argument">
+                  <stringProp name="Argument.name">tenantNamePreffix</stringProp>
+                  <stringProp name="Argument.value">${tenantNamePreffix}</stringProp>
+                  <stringProp name="Argument.desc">The text portion of the tenant name.</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="tenantCount" elementType="Argument">
+                  <stringProp name="Argument.name">tenantCount</stringProp>
+                  <stringProp name="Argument.value">${tenantCount}</stringProp>
+                  <stringProp name="Argument.desc">Count of tenenats to be created.</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="tenantIndexDigits" elementType="Argument">
+                  <stringProp name="Argument.name">tenantIndexDigits</stringProp>
+                  <stringProp name="Argument.value">${tenantIndexDigits}</stringProp>
+                  <stringProp name="Argument.desc">Number of digits in tenant index.</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="tenantIndexStart" elementType="Argument">
+                  <stringProp name="Argument.name">tenantIndexStart</stringProp>
+                  <stringProp name="Argument.value">${tenantIndexStart}</stringProp>
+                  <stringProp name="Argument.desc">Index of the first generated tenant.</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="tenantIndexStep" elementType="Argument">
+                  <stringProp name="Argument.name">tenantIndexStep</stringProp>
+                  <stringProp name="Argument.value">${tenantIndexStep}</stringProp>
+                  <stringProp name="Argument.desc">Step with the tenant index is increased.</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="tenantUsersCount" elementType="Argument">
+                  <stringProp name="Argument.name">tenantUsersCount</stringProp>
+                  <stringProp name="Argument.value">${tenantUsersCount}</stringProp>
+                  <stringProp name="Argument.desc">Number of users to be creaated for each tenant.</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="classname">com.ericsson.ecm.performance.applications.loading.CreateTenants</stringProp>
+          </com.ericsson.jmeter.ecm.sampler.EcmApplicationSampler>
+          <hashTree/>
+        </hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="host" elementType="Argument">
+              <stringProp name="Argument.name">host</stringProp>
+              <stringProp name="Argument.value">${__P(host,ecmha-ka26.ete.ka.sw.ericsson.se)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Ecm host name</stringProp>
+            </elementProp>
+            <elementProp name="loginTenant" elementType="Argument">
+              <stringProp name="Argument.name">loginTenant</stringProp>
+              <stringProp name="Argument.value">${__P(loginTenant,ECM)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Tenant name used for initial login</stringProp>
+            </elementProp>
+            <elementProp name="userName" elementType="Argument">
+              <stringProp name="Argument.name">userName</stringProp>
+              <stringProp name="Argument.value">${__P(userName,ecmadmin)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Tenant&apos;s user name</stringProp>
+            </elementProp>
+            <elementProp name="password" elementType="Argument">
+              <stringProp name="Argument.name">password</stringProp>
+              <stringProp name="Argument.value">${__P(password,CloudAdmin123)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Tenant&apos;s password</stringProp>
+            </elementProp>
+            <elementProp name="tenantCount" elementType="Argument">
+              <stringProp name="Argument.name">tenantCount</stringProp>
+              <stringProp name="Argument.value">${__P(tenantCount,1)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="tenantIndexDigits" elementType="Argument">
+              <stringProp name="Argument.name">tenantIndexDigits</stringProp>
+              <stringProp name="Argument.value">${__P(tenantIndexDigits,4)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="tenantIndexStart" elementType="Argument">
+              <stringProp name="Argument.name">tenantIndexStart</stringProp>
+              <stringProp name="Argument.value">${__P(tenantIndexStart,0)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="tenantIndexStep" elementType="Argument">
+              <stringProp name="Argument.name">tenantIndexStep</stringProp>
+              <stringProp name="Argument.value">${__P(tenantIndexStep,1)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="tenantUsersCount" elementType="Argument">
+              <stringProp name="Argument.name">tenantUsersCount</stringProp>
+              <stringProp name="Argument.value">${__P(tenantUsersCount,300)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="tenantNamePreffix" elementType="Argument">
+              <stringProp name="Argument.name">tenantNamePreffix</stringProp>
+              <stringProp name="Argument.value">${__P(tenantNamePreffix,perfTenant)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.SynthesisReportGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Synthesis Report (filtered)" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">500</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+          <boolProp name="ResultCollector.success_only_logging">true</boolProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

@@ -1,0 +1,35 @@
+#!/bin/sh
+#source /app/jenkins_scripts/prep/coreVMs.performance
+PASS="ecm123"
+
+. /app/jenkins_scripts/prep/Installation/perf_config_reader.sh
+
+system=$1
+nodes=$(get_CoreVMs $system)
+echo "Nodes: "$nodes
+
+function run0() {
+  cmdline=$1
+  echo "Setting log level to ERROR for Core VMs: $cmdline"
+  eval $cmdline
+}
+
+for host_name in $nodes
+do
+        #echo "Setting log level to ERROR for host  "$host_name
+        #sshpass -p $PASS ssh -oStrictHostKeyChecking=no root@$host_name uptime
+	run0 "sshpass -p $PASS ssh root@$host_name  sed -i.bak 's/DEBUG/ERROR/g' /app/ecm/appserver/jboss-eap-6.4/modules/com/ericsson/configuration/main/logback.xml"
+        run0 "sshpass -p $PASS ssh root@$host_name  sed -i.bak 's/TRACE/ERROR/g' /app/ecm/appserver/jboss-eap-6.4/modules/com/ericsson/configuration/main/logback.xml"
+        run0 "sshpass -p $PASS ssh root@$host_name  sed -i.bak 's/DEBUG/ERROR/g' /app/ecm/appserver/jboss-eap-6.4/modules/com/ericsson/cmdb/configuration/main/logback.xml"
+        run0 "sshpass -p $PASS ssh root@$host_name  sed -i.bak 's/TRACE/ERROR/g' /app/ecm/appserver/jboss-eap-6.4/modules/com/ericsson/cmdb/configuration/main/logback.xml"
+	echo " Verify DEBUG and TRACE removed from logback.xml"
+	run0 "sshpass -p $PASS ssh root@$host_name grep DEBUG /app/ecm/appserver/jboss-eap-6.4/modules/com/ericsson/configuration/main/logback.xml"
+	run0 "sshpass -p $PASS ssh root@$host_name grep TRACE /app/ecm/appserver/jboss-eap-6.4/modules/com/ericsson/configuration/main/logback.xml"
+	run0 "sshpass -p $PASS ssh root@$host_name grep DEBUG /app/ecm/appserver/jboss-eap-6.4/modules/com/ericsson/cmdb/configuration/main/logback.xml"
+	run0 "sshpass -p $PASS ssh root@$host_name grep TRACE /app/ecm/appserver/jboss-eap-6.4/modules/com/ericsson/cmdb/configuration/main/logback.xml"
+	echo " Restarting service jboss-eap for log level change to take effect "
+	run0 "sshpass -p $PASS ssh root@$host_name service jboss-eap restart"
+        echo "Done with node $host_name."
+done
+#echo ""
+#echo " Restart ECM on Cores: ecm_shutdown.sh  ecm_startup.sh "

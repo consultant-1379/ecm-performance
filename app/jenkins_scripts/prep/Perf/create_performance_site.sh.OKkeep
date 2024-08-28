@@ -1,0 +1,34 @@
+#!/bin/bash
+
+echo ""
+echo "this is the jdb_host string: " $1
+echo " "
+echo y > /tmp/yes
+cd /app/ecm/tools/cmdb/cmdb-util/util
+
+#hostname
+
+function run0() {
+  cmdline=$1
+  echo "Command to get the current sites: $cmdline"
+#  echo $'This is the result:'
+  echo "This is the result:"
+  eval $cmdline
+}
+
+#echo " Get the current sites "
+run0 "curl --insecure -X GET --header 'Accept: application/json' --header 'Authorization: Basic ZWNtYWRtaW46Q2xvdWRBZG1pbjEyMw==' --header 'TenantId: ecm' 'https://ecm156x50.ete.ka.sw.ericsson.se/ecm_service/sites'"
+echo " "
+
+function run() {
+  cmdline=$1
+  echo "Script cmdbUpdate.sh to be executed on Core VM: $cmdline"
+  echo ""
+  eval $cmdline
+}
+echo ""
+#./cmdbUpdate.sh -filename /root/performance_site.yaml -mode info -username cmdb -password cmdb -jdbcUrl jdbc:oracle:thin:@$1:1521/ecmdb1 -logLevel info<  /tmp/yes
+curl --insecure -X GET --header 'Accept: application/json' --header 'Authorization: Basic ZWNtYWRtaW46Q2xvdWRBZG1pbjEyMw==' --header 'TenantId: ecm' 'https://ecm156x50.ete.ka.sw.ericsson.se/ecm_service/sites'
+./cmdbUpdate.sh -filename /root/performance_site.yaml -mode commit -username cmdb -password cmdb -jdbcUrl jdbc:oracle:thin:@$1:1521/ecmdb1 -logLevel info<  /tmp/yes
+
+echo " Done on Core VM "
